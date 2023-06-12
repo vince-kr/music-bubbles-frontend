@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="canvas_container">
+      <canvas id="bubbles" width="2970" height="2100"></canvas>
+    </div>
+    <div id="inputs">
+      <label for="title">Title: </label><input id="title"><br />
+      <label for="line-one">Tune: </label><input class="tune-line"><br />
+      <label for="line-two" style="color:#fff">Tune: </label><input class="tune-line">
+    </div>
+
+    <script>
+      // Canvas container size and dynamic resize
+      function applyCanvasSize() {
+        let canvasWidthRendered = Math.round(document.documentElement.clientWidth * 0.5);
+        let canvasHeightRendered = Math.round(canvasWidthRendered * 0.70707);  // approximately
+        canvasContainer.style.width = canvasWidthRendered + "px";
+        canvasContainer.style.height = canvasHeightRendered + "px";
+      }
+
+      const canvasContainer = document.getElementById("canvas_container");
+      applyCanvasSize()
+      window.addEventListener("resize", applyCanvasSize);
+    </script>
+
+    <script src="draw.js"></script>
+  </body>
+</html>
